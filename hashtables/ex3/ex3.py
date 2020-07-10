@@ -1,10 +1,14 @@
+cache = {}
+
 def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    for i, numbers in enumerate(arrays):
+        if i not in cache:
+            cache[i] = numbers
 
-    return result
+    print(cache)
 
 
 if __name__ == "__main__":
