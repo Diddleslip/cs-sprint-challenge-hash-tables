@@ -1,14 +1,23 @@
-cache = {}
-
 def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    for i, numbers in enumerate(arrays):
-        if i not in cache:
-            cache[i] = numbers
+    cache = {}
+    result = []
 
-    print(cache)
+    for index in arrays:
+        for i in index:
+            if i not in cache:
+                cache[i] = 1
+            else:
+                cache[i] += 1
+
+    for key, value in cache.items():
+        # print(key, value)
+        if value == len(arrays):
+            result.append(key)
+
+    return result
 
 
 if __name__ == "__main__":
